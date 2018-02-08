@@ -1,0 +1,22 @@
+<h1>Users</h1>
+<table>
+  <thead>
+  <tr>
+    <th>user</th>
+    <th>role</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let u of users">
+    <td>
+      <a
+        routerLink="/users/{{u.id}}"
+      >
+        {{ u.name }}
+      </a>
+    </td>
+    <td>{{ u.role.name }}</td>
+  </tr>
+  </tbody>
+</table>
