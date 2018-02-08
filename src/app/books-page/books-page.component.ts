@@ -7,11 +7,12 @@ import {PaperlibService} from '../paperlib.service';
   styleUrls: ['./books-page.component.css']
 })
 export class BooksPageComponent implements OnInit {
+  books = [];
 
   constructor(private paperlibService: PaperlibService) { }
 
   ngOnInit() {
-    this.paperlibService.getBooks().subscribe(books => console.log(books));
+    this.paperlibService.getBooks().subscribe(books => this.books = books);
   }
 
 }
