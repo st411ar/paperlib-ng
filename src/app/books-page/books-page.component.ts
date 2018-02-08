@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PaperlibService} from '../paperlib.service';
 
 @Component({
   selector: 'app-books-page',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BooksPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private paperlibService: PaperlibService) { }
 
   ngOnInit() {
+    this.paperlibService.getBooks().subscribe(books => console.log(books));
   }
 
 }
