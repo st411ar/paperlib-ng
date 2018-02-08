@@ -16,8 +16,10 @@
     <tbody>
     <tr *ngFor="let b of user.books">
       <td><a routerLink="/books/{{b.id}}">{{ b.name }}</a></td>
-      <td *ngIf="b.readerId == null"><i class="material-icons green">done</i></td>
-      <td *ngIf="b.readerId != null"><i class="material-icons red">close</i></td>
+      <td>
+        <span *ngIf="b.readerId == null" class="new badge left green" data-badge-caption="free"></span>
+        <span *ngIf="b.readerId != null" class="new badge left red" data-badge-caption="busy"></span>
+      </td>
     </tr>
     </tbody>
   </table>

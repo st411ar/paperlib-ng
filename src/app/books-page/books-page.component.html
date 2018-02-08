@@ -10,27 +10,11 @@
 
   <tbody>
     <tr *ngFor="let b of books">
+      <td><a routerLink="/books/{{b.id}}">{{ b.name }}</a></td>
+      <td><a routerLink="/users/{{b.owner.id}}">{{ b.owner.name }}</a></td>
       <td>
-        <a
-          routerLink="/books/{{b.id}}"
-        >
-          {{ b.name }}
-        </a>
-      </td>
-      <td>
-        <a
-          routerLink="/users/{{b.owner.id}}"
-        >
-          {{ b.owner.name }}
-        </a>
-      </td>
-      <td>
-        <a
-          *ngIf="b.reader != null"
-          routerLink="/users/{{b.reader.id}}"
-        >
-          {{ b.reader.name }}
-        </a>
+        <a *ngIf="b.reader != null" routerLink="/users/{{b.reader.id}}">{{ b.reader.name }}</a>
+        <span *ngIf="b.reader == null" class="new badge left green" data-badge-caption="free"></span>
       </td>
     </tr>
   </tbody>
