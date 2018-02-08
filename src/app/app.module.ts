@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import {RouterModule} from '@angular/router';
 import { BooksPageComponent } from './books-page/books-page.component';
+import {HttpModule} from '@angular/http';
 
 
 const routes = [
@@ -22,6 +23,7 @@ const routes = [
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
