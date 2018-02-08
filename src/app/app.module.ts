@@ -9,13 +9,15 @@ import { BooksPageComponent } from './books-page/books-page.component';
 import {HttpModule} from '@angular/http';
 import { UsersPageComponent } from './users-page/users-page.component';
 import { BookProfileComponent } from './book-profile/book-profile.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 const routes = [
   {path: '', component: MainPageComponent},
   {path: 'books', component: BooksPageComponent},
   {path: 'books/:id', component: BookProfileComponent},
-  {path: 'users', component: UsersPageComponent}
+  {path: 'users', component: UsersPageComponent},
+  {path: 'users/:id', component: UserProfileComponent},
 ];
 
 
@@ -25,7 +27,8 @@ const routes = [
     MainPageComponent,
     BooksPageComponent,
     UsersPageComponent,
-    BookProfileComponent
+    BookProfileComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
