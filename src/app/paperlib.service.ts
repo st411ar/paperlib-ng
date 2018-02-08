@@ -15,4 +15,9 @@ export class PaperlibService {
     return this.http.get('http://localhost:4999/paperlib/users')
       .map(response => response.json());
   }
+
+  getBook(id) {
+    return this.http.get('http://localhost:4999/paperlib/books/' + id)
+      .map(response => response.json());
+  }
 }

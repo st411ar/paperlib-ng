@@ -1,0 +1,4 @@
+<h1>Book Profile</h1>
+<h2>"{{ book.name }}"</h2>
+<h3>Owner <a routerLink="/users/{{book.owner.id}}">{{ book.owner.name }}</a></h3>
+<h3 *ngIf="book.reader != null">Reader <a routerLink="/users/{{book.reader.id}}">{{ book.reader.name }}</a></h3>
