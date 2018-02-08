@@ -1,0 +1,42 @@
+<h1>User Profile</h1>
+<h2>Name {{ user.name }}</h2>
+<h2>Role {{ user.role.name}}</h2>
+
+<div *ngIf="user.books.length > 0">
+  <hr/>
+  <h3>Own Books</h3>
+  <table>
+    <thead>
+    <tr>
+      <th>book</th>
+      <th>availability</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let b of user.books">
+      <td><a routerLink="/books/{{b.id}}">{{ b.name }}</a></td>
+      <td *ngIf="b.readerId == null"><i class="material-icons green">done</i></td>
+      <td *ngIf="b.readerId != null"><i class="material-icons red">close</i></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="user.rentedBooks.length > 0">
+  <hr/>
+  <h3>Rented Books</h3>
+  <table>
+    <thead>
+    <tr>
+      <th>book</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let b of user.rentedBooks">
+      <td><a routerLink="/books/{{b.id}}">{{ b.name }}</a></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

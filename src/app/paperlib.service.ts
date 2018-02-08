@@ -11,13 +11,18 @@ export class PaperlibService {
       .map(response => response.json());
   }
 
+  getBook(id) {
+    return this.http.get('http://localhost:4999/paperlib/books/' + id)
+      .map(response => response.json());
+  }
+
   getUsers() {
     return this.http.get('http://localhost:4999/paperlib/users')
       .map(response => response.json());
   }
 
-  getBook(id) {
-    return this.http.get('http://localhost:4999/paperlib/books/' + id)
+  getUser(id) {
+    return this.http.get('http://localhost:4999/paperlib/users/' + id)
       .map(response => response.json());
   }
 }
